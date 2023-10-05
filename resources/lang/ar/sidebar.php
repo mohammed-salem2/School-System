@@ -1,0 +1,27 @@
+<?php
+
+return[
+    'Dashboard' =>'لوحة التحكم',
+    'Admin'=>'الادمن',
+    'Index'=>'عرض',
+    'Create'=>'انشاء',
+    'Actors' => 'مستخدمين النظام',
+    'Grades'=> 'المراحل الدراسية',
+    'System'=>'النظام',
+    'Classrooms' => 'الصفوف الدراسية',
+    'Sections'=> 'الأقسام',
+    'Parents' => 'اولياء الامور',
+    'Teachers'=>'المعلمين',
+    'Students'=>'الطلاب',
+    'Students_Promotions'=>' عرض الترقيات',
+    'students_promotions'=>'ترقية الطلاب',
+    'Graduating_Students'=>'الطلبة المتخرجين',
+    'graduating_students'=>'تخريج طالب',
+    'fees' => 'الرسوم الدراسية',
+    'invoice' => 'الفواتير',
+    'discount' => 'الخصومات',
+    'receipt' => 'سندات القبض',
+    'process' => 'الرسوم المستبعدة',
+    'payment' => ' سندات الصرف',
+    'attendance' => 'الحضور والغياب',
+];

@@ -1,0 +1,36 @@
+<?php
+
+return [
+
+    'Step1' => 'Father information',
+    'Step2' => 'Mother information',
+    'Step3' => 'Confirm information',
+    'Email' => 'Email',
+    'Password' => 'Password',
+    'name_fa'=> 'Father Name',
+    'name_ma'=> 'Mother Name',
+    'Name_Father' => 'Father Name Arabic',
+    'Name_Father_en' => 'Father Name English',
+    'Name_Mother' => 'Mother Name Arabic',
+    'Name_Mother_en' => 'Mother Name English',
+    'Job_Father' => 'Job Title Arabic',
+    'Job_Father_en' => 'Job Title English',
+    'National_ID_Father' => 'Identification Number',
+    'Passport_ID_Father' => 'Passport Number',
+    'Phone_Father' => 'Telephone Number',
+    'Nationality_Father_id' => 'Nationality',
+    'Blood_Type_Father_id' => 'Blood Type',
+    'Religion_Father_id' => 'Religion',
+    'Address_Father' => 'Address Father',
+    'Address_Mother' => 'Address Mother',
+    'create_new_parents' => 'Create New Parents',
+    'edit_parent' => 'Edit Parent',
+    'step_one' => 'Step 1' ,
+    'step_two' => 'Step 2' ,
+    'step_three' => 'step 3',
+    'Next' => 'Next',
+    'Back' => 'Back',
+    'Choose' => 'Choose',
+    'sure' => 'Are you sure of the data?',
+
+];

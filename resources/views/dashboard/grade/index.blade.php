@@ -18,6 +18,7 @@
     :values="['id', 'name', 'note']"
     name="{{ __('grade.create_new_grades') }}"
     modeltitle="{{ __('app.delete_item') }}"
+    filters="true"
     :text_filters="[['name' => 'name', 'label' => 'Filter By Name', 'cols' => '4']]"
     table="grade" />
 @endsection

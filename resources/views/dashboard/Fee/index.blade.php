@@ -7,8 +7,7 @@
 @endsection
 
 @section('content')
-<x-dashboard.alert />
-<x-dashboard.table :ths="['#', __('Fee.Title') , __('Fee.amount') , __('Fee.grade_name') ,  __('section.classroom_name') , __('Fee.year') , __('Fee.desc')  , __('section.created') ,  __('grade.Actions')]"
+<x-dashboard.table title="Fees Table" :ths="['#', __('Fee.Title') , __('Fee.amount') , __('Fee.grade_name') ,  __('section.classroom_name') , __('Fee.year') , __('Fee.desc')  , __('section.created') ,  __('grade.Actions')]"
 :models="$fees"
 edit="fees.edit"
 show="fees.show"
@@ -19,6 +18,7 @@ create="fees.create"
 name="{{ __('Fee.create_new_fees') }}"
 modeltitle="{{ __('app.delete_item') }}"
 relation="grade"
+filters="false"
 relationtwo="classroom"
 table="fee"
 />

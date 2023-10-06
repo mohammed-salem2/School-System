@@ -16,6 +16,7 @@ index="parents.index"
 create="parents.create"
 :values="['id', 'name_father', 'name_mother' , 'email' , 'created']"
 name="{{ __('Parent_trans.create_new_parents') }}"
+filters='false'
 modeltitle="{{ __('app.delete_item') }}"
 :text_filters="[
     ['name' => 'name_father', 'label' => 'Filter by Father Name', 'cols' => '4'] ,

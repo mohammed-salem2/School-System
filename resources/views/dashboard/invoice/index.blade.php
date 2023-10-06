@@ -7,6 +7,14 @@
 @endsection
 
 @section('content')
+<div class="">
+    <div class="card shadow-sm">
+        <div class="card-header">
+            <h3 class="card-title">Invoices Table</h3>
+        </div>
+    </div>
+</div>
+<div>
     <table id="kt_datatable_example_5" class="table table-striped table-row-bordered gy-5 gs-7 border rounded">
         <thead>
             <tr class="fw-bolder fs-6 text-gray-800 px-7">
@@ -93,6 +101,8 @@
         </tbody>
     </table>
     {{ $invoices->links() }}
+</div>
+
 @endsection
 
 @section('JsFile')

@@ -7,8 +7,7 @@
 @endsection
 
 @section('content')
-<x-dashboard.alert />
-<x-dashboard.table :ths="['#', __('section.Name') , __('section.grade_name') ,  __('section.classroom_name') , __('section.status') , __('section.created') ,  __('grade.Actions')]"
+<x-dashboard.table title="Sections Table" :ths="['#', __('section.Name') , __('section.grade_name') ,  __('section.classroom_name') , __('section.status') , __('section.created') ,  __('grade.Actions')]"
 :models="$sections"
 edit="sections.edit"
 show="sections.show"
@@ -19,6 +18,7 @@ create="sections.create"
 name="{{ __('section.create_new_sections') }}"
 modeltitle="{{ __('app.delete_item') }}"
 relation="grade"
+filters="false"
 relationtwo="classroom"
 table="grade"
 />

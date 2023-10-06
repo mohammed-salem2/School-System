@@ -16,6 +16,7 @@
     'relationtwo',
     'relationthree',
     'relationfour',
+    'filters',
 ])
 
 
@@ -29,6 +30,7 @@
             </div>
         </div>
     </div>
+    @if($filters == 'true')
     <div class="card shadow-sm mt-3">
         <div class="card-header d-flex justify-content-between">
             <h3 class="card-title">{{ __('app.filters') }}</h3>
@@ -73,6 +75,7 @@
             </form>
         </div>
     </div>
+    @endif
 </div>
 <div class="">
     <table id="kt_datatable_example_5" class="table table-striped gy-5 gs-7 border rounded">

@@ -23,8 +23,7 @@
         </tbody>
     </table>
 </div> --}}
-<x-dashboard.alert />
-<x-dashboard.table :ths="['#', 'Name', 'Email', 'Status', 'Actions']"
+<x-dashboard.table title="Admins Table" :ths="['#', 'Name', 'Email', 'Status', 'Actions']"
 :models="$admins"
 edit="admins.edit"
 show="admins.show"
@@ -34,6 +33,7 @@ create="admins.create"
 :values="['id', 'name', 'email', 'status']"
 name="Create New Admins"
 modeltitle="Delete Item !!"
+filters="false"
 table="auth"
 />
 @endsection

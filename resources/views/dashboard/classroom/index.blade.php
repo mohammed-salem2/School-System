@@ -23,9 +23,7 @@
         </tbody>
     </table>
 </div> --}}
-<x-dashboard.alert />
-
-<x-dashboard.table :ths="['#', __('classroom.Name') , __('classroom.Grade_name') , __('classroom.created')  , __('classroom.Actions')]"
+<x-dashboard.table title="Classrooms Table" :ths="['#', __('classroom.Name') , __('classroom.Grade_name') , __('classroom.created')  , __('classroom.Actions')]"
 :models="$classrooms"
 edit="classrooms.edit"
 show="classrooms.show"
@@ -35,6 +33,7 @@ create="classrooms.create"
 :values="['id', 'name', 'forign_id' , 'created']"
 name="{{ __('classroom.create_new_class') }}"
 modeltitle="{{ __('app.delete_item') }}"
+filters="false"
 relation="grade"
 table="classroom"
 />

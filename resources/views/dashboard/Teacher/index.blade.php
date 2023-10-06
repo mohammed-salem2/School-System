@@ -7,8 +7,7 @@
 @endsection
 
 @section('content')
-<x-dashboard.alert />
-<x-dashboard.table :ths="['#', __('Teacher.Name_Teacher') , __('Teacher.Email') ,  __('Teacher.specialization') , __('Teacher.Gender') ,  __('Teacher.Status') , __('section.created') ,  __('grade.Actions')]"
+<x-dashboard.table title="Teachers Table" :ths="['#', __('Teacher.Name_Teacher') , __('Teacher.Email') ,  __('Teacher.specialization') , __('Teacher.Gender') ,  __('Teacher.Status') , __('section.created') ,  __('grade.Actions')]"
 :models="$teachers"
 edit="teachers.edit"
 show="teachers.show"
@@ -18,6 +17,7 @@ create="teachers.create"
 :values="['id', 'name', 'email' ,'forign_id' , 'gender' , 'status' , 'created']"
 name="{{ __('Teacher.Add_Teacher') }}"
 modeltitle="{{ __('app.delete_item') }}"
+filters="false"
 relation="specialization"
 table="teacher"
 />

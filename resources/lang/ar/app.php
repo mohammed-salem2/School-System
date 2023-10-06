@@ -42,6 +42,16 @@ return[
     'student_list' => 'قائمة الطلاب',
     'today_date' => 'تاريخ اليوم',
     'confirm' => 'تأكيد',
-
-
+    'presence' => 'حضور',
+    'absence' => 'غياب',
+    'filters' => 'الفلاتر و البحث',
+    'Filter By Name' => 'البحث عبر الأسم',
+    'Filter By Status' => 'الفلترة حسب حالة النشاط',
+    'All' => 'الكل',
+    'Active' => 'نشط',
+    'Draft' => 'غير نشط',
+    'filter'=> 'فلترة',
+    'students_table' => 'جدول الطلاب',
+    'Filter by Father Name' => 'البحث عبر اسم الأب',
+    'Filter by Mother Name' => 'البحث عبر اسم الأم',
 ];

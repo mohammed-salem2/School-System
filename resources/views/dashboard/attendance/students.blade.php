@@ -72,29 +72,29 @@
                         <td>
                             @if (isset($student->attendances()->where('attendance_date', date('Y-m-d'))->first()->student_id))
                                 <label class="block text-gray-500 font-semibold sm:border-r sm:pr-4">
-                                    <input name="attendences[{{ $student->id }}]" disabled
+                                    <input id="flexRadioDefault" name="attendences[{{ $student->id }}]" disabled
                                         {{ $student->attendances()->first()->attendance_status == 1 ? 'checked' : '' }}
-                                        class="leading-tight" type="radio" value="presence">
-                                    <span class="text-success">حضور</span>
+                                        class="form-check-input" type="radio" value="presence">
+                                        <label for="flexRadioDefault" class="form-check-label">{{ __('app.presence') }}</label>
                                 </label>
 
                                 <label class="ml-4 block text-gray-500 font-semibold">
-                                    <input name="attendences[{{ $student->id }}]" disabled
+                                    <input id="flexRadioDefault" name="attendences[{{ $student->id }}]" disabled
                                         {{ $student->attendances()->first()->attendance_status == 0 ? 'checked' : '' }}
-                                        class="leading-tight" type="radio" value="absent">
-                                    <span class="text-danger">غياب</span>
+                                        class="form-check-input" type="radio" value="absent">
+                                        <label for="flexRadioDefault" class="form-check-label">{{ __('app.absence') }}</label>
                                 </label>
                             @else
                                 <label class="block text-gray-500 font-semibold sm:border-r sm:pr-4">
-                                    <input name="attendences[{{ $student->id }}]" class="leading-tight" type="radio"
+                                    <input id="flexRadioDefault" name="attendences[{{ $student->id }}]" class="form-check-input" type="radio"
                                         value="presence">
-                                    <span class="text-success">حضور</span>
+                                    <label for="flexRadioDefault" class="form-check-label">{{ __('app.presence') }}</label>
                                 </label>
 
                                 <label class="ml-4 block text-gray-500 font-semibold">
-                                    <input name="attendences[{{ $student->id }}]" class="leading-tight" type="radio"
+                                    <input id="flexRadioDefault" name="attendences[{{ $student->id }}]" class="form-check-input" type="radio"
                                         value="absent">
-                                    <span class="text-danger">غياب</span>
+                                    <label for="flexRadioDefault" class="form-check-label">{{ __('app.absence') }}</label>
                                 </label>
                             @endif
 

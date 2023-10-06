@@ -5,6 +5,7 @@ namespace App\Repository\Attendance;
 use App\Models\Attendance;
 use App\Models\Section;
 use App\Models\Specialization;
+use App\Models\Student;
 use App\Models\Teacher;
 use Illuminate\Support\Facades\Hash;
 
@@ -28,21 +29,20 @@ class AttendanceRepository implements AttendanceInterface{
     }
 
     public function StoreAttendances($request){
-        $date = date('Y-m-d');
-
         foreach ($request->attendences as $studentId => $attendance){
+            $students = Student::findOrFail($studentId);
             if($attendance == 'presence'){
                 $status = 1;
             } else if ($attendance == 'absent') {
                 $status = 0;
             }
                 Attendance::create([
-                'student_id' => $studentId,
-                'grade_id' => $request->get('grade_id'),
-                'classroom_id' => $request->get('classroom_id'),
-                'section_id' =>  $request->get('section_id'),
+                'student_id' => $students->id,
+                'grade_id' => $students->grade_id,
+                'classroom_id' => $students->classroom_id,
+                'section_id' =>  $students->section_id,
                 'teacher_id' => 1,
-                'attendance_date' => $date,
+                'attendance_date' => date('Y-m-d'),
                 'attendance_status' => $status,
             ]);
             // dd($x);

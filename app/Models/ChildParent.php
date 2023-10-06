@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
@@ -45,6 +46,22 @@ class ChildParent extends Model
     protected $casts = [
         'admin_data' => 'array' ,
     ];
+
+
+    public function scopeSearch(Builder $query, $request)
+    {
+        if ($request['name_father'] ?? false) {
+            $query->where('name_father', 'LIKE', "%{$request['name_father']}%");
+        }
+        if ($request['name_mother'] ?? false) {
+            $query->where('name_mother', 'LIKE', "%{$request['name_mother']}%");
+        }
+    }
+
+    public function scopeActive(Builder $query)
+    {
+        return $query->where('status', 'active');
+    }
 
     public function blood()
     {

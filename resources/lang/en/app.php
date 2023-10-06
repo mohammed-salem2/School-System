@@ -43,5 +43,18 @@ return[
     'student_list' => 'Student List',
     'today_date' => 'Today Date',
     'confirm' => 'confirm',
+    'presence' => 'Presence',
+    'absence' => 'Absence',
+    'filters' => 'Filters',
+    'Filter By Name' => 'Filter By Name',
+    'Filter By Status' => 'Filter By Status',
+    'All' => 'All',
+    'Active' => 'Active',
+    'Draft' => 'Draft',
+    'filter'=> 'Filter',
+    'students_table' => 'Students Table',
+    'Filter by Father Name' => 'Filter by Father Name',
+    'Filter by Mother Name' => 'Filter by Mother Name',
+
 
 ];

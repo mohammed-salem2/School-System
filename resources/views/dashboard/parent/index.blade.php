@@ -7,8 +7,7 @@
 @endsection
 
 @section('content')
-<x-dashboard.alert />
-<x-dashboard.table :ths="['#', __('Parent_trans.name_fa') , __('Parent_trans.name_ma') ,  __('Parent_trans.Email') ,  __('section.created') ,  __('grade.Actions')]"
+<x-dashboard.table title="Parents Table" :ths="['#', __('Parent_trans.name_fa') , __('Parent_trans.name_ma') ,  __('Parent_trans.Email') ,  __('section.created') ,  __('grade.Actions')]"
 :models="$parents"
 edit="parents.edit"
 show="parents.show"
@@ -18,6 +17,10 @@ create="parents.create"
 :values="['id', 'name_father', 'name_mother' , 'email' , 'created']"
 name="{{ __('Parent_trans.create_new_parents') }}"
 modeltitle="{{ __('app.delete_item') }}"
+:text_filters="[
+    ['name' => 'name_father', 'label' => 'Filter by Father Name', 'cols' => '4'] ,
+    ['name' => 'name_mother', 'label' => 'Filter by Mother Name', 'cols' => '4'] ,
+]"
 table="parent"
 />
 @endsection

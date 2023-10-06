@@ -17,7 +17,7 @@ use Illuminate\Support\Str;
 class StudentRepository implements StudentInterface{
 
     public function getAllStudents(){
-        $students = Student::with(
+        $students = Student::search(request()->query())->with(
             'blood' ,
             'nationality' ,
             'religion' ,

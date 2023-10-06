@@ -19,7 +19,7 @@ class ChildParentController extends Controller
      */
     public function index()
     {
-        $parents = ChildParent::orderBy('id' , 'desc')->paginate(10);
+        $parents = ChildParent::search(request()->query())->orderBy('id' , 'desc')->paginate(10);
         return view('dashboard.parent.index' , compact('parents'));
     }
 

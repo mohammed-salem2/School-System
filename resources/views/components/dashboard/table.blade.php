@@ -1,7 +1,78 @@
-<div class="card-header">
-            <div class="col-md-6">
+@props([
+    'text_filters',
+    'select_fixed_filters',
+    'title',
+    'create',
+    'name',
+    'ths',
+    'models',
+    'table',
+    'values',
+    'edit',
+    'show',
+    'destory',
+    'modeltitle',
+    'relation',
+    'relationtwo',
+    'relationthree',
+    'relationfour',
+])
+
+
+
+<div class="">
+    <div class="card shadow-sm">
+        <div class="card-header">
+            <h3 class="card-title">{{ __($title) }}</h3>
+            <div class="card-toolbar">
                 <a href="{{ route($create) }}" type="submit" class="btn btn-info">{{ $name }}</a>
             </div>
+        </div>
+    </div>
+    <div class="card shadow-sm mt-3">
+        <div class="card-header d-flex justify-content-between">
+            <h3 class="card-title">{{ __('app.filters') }}</h3>
+        </div>
+        <div class="card-body">
+            <form action="{{ URL::current() }}" method="get">
+                <div class="row">
+                    @isset($text_filters)
+                        @foreach ($text_filters as $filter)
+                            <div class="col-12 col-md-{{ $filter['cols'] ?? '3' }} mt-2">
+                                <label for="{{ $filter['name'] }}"
+                                    class="mb-1 ps-1 text-black">{{ __('app.'.$filter['label']) }}</label>
+                                <input class="form-control form-control-sm mb-1" type="text" name="{{ $filter['name'] }}"
+                                    value="{{ request()->query($filter['name']) }}" placeholder="{{  __('app.'.$filter['label']) }}" />
+                                {{--  @if (count($datas) <= 0) disabled @endif  --}}
+                            </div>
+                        @endforeach
+                    @endisset
+
+                    @isset($select_fixed_filters)
+                        @foreach ($select_fixed_filters as $filter)
+                            <div class="col-{{ $filter['cols'] ?? '3' }} mt-2">
+                                <label for="{{ $filter['name'] }}"
+                                    class="mb-1 ps-1 text-black">{{ __('app.'.$filter['label']) }}</label>
+                                <div class="input-group input-group-sm">
+                                    <select name="{{ $filter['name'] }}" id="{{ $filter['name'] }}"
+                                        class="form-select form-select-sm">
+                                        <option value="">{{ __('app.All') }}</option>
+                                        @foreach ($filter['options'] as $option)
+                                            <option value="{{ $option['option_value'] }}" @selected($option['option_value'] == request($filter['name']))>
+                                                {{ __('app.'.$option['option_label']) }}</option>
+                                        @endforeach
+                                    </select>
+                                    <button class="btn btn-dark" type="submit">{{ __('app.filter') }}</button>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endisset
+                </div>
+                {{-- Hidden Submit Button --}}
+                <button class="btn btn-sm btn-dark d-none" type="submit">Filter</button>
+            </form>
+        </div>
+    </div>
 </div>
 <div class="">
     <table id="kt_datatable_example_5" class="table table-striped gy-5 gs-7 border rounded">
@@ -198,13 +269,13 @@
                                     {{ $model->$relationtwo->name ?? ' ' }}
                                 </td>
                             @elseif ($value == 'forign_id_three')
-                            <td>
-                                {{ $model->$relationthree->name ?? ' ' }}
-                            </td>
+                                <td>
+                                    {{ $model->$relationthree->name ?? ' ' }}
+                                </td>
                             @elseif ($value == 'forign_id_four')
-                            <td>
-                                {{ $model->$relationfour->name_father ?? ' ' }}
-                            </td>
+                                <td>
+                                    {{ $model->$relationfour->name_father ?? ' ' }}
+                                </td>
                             @elseif ($value == 'created')
                                 <td>
                                     {{ $model->admin_data['name'] ?? 'Not Found' }}
